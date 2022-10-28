@@ -1,0 +1,59 @@
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body { 
+    height: 100vh;
+    width: 100%;
+    background-color: #bdc3c7;
+}
+.buttons { 
+    position: absolute;
+    top: 85%;
+    right: 50%;
+    transform: translate(50%,-85%);
+    transition: 1.5s;
+}
+
+.about-me { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: 4s;
+    p{
+        color: whitesmoke;
+        font-size: 24px;
+        line-height: 0.8rem;
+    }
+}
+.visible { 
+    opacity: 1;
+}
+.hidden { 
+    opacity: 0;
+}
+h1:nth-child(2) { 
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,20%);
+    color: white;
+    transition: .5s;
+}
+body > h1:nth-child(3) {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,20%);
+    color: white;
+    transition: 1s;
+    text-align: center;
+}
+.navbar {
+    padding: 5px;
+}
