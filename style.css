@@ -10946,14 +10946,13 @@ body {
   width: 100%;
   background-color: #bdc3c7;
 }
-body h1, body .h1 {
+body #move-button {
   position: absolute;
-  top: 30%;
+  top: 70%;
   left: 50%;
+  width: 130px;
+  height: 30px;
   transform: translate(-50%, -50%);
-  color: white;
-  transition: 0.5s;
-  opacity: 0;
 }
 
 .visible {

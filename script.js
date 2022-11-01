@@ -3,9 +3,7 @@ import { RGBELoader } from "./node_modules/three/examples/jsm/loaders/RGBELoader
 import { OrbitControls } from "./node_modules/three/examples/jsm/controls/OrbitControls.js";
 import gsap from "./node_modules/gsap/index.js";
 
-const body = document.querySelector("body");
-body.insertAdjacentHTML("beforeend", `<h1>Welcome</h1>`);
-const hello = document.querySelector("h1");
+const moveBtn = document.querySelector("#move-button");
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
     75,
@@ -53,19 +51,24 @@ const starmaterial = new THREE.MeshBasicMaterial({
 const starmesh = new THREE.Mesh(stargeometry, starmaterial);
 
 scene.add(starmesh);
-
 camera.position.z = 10;
-camera.position.x = 0;
+camera.lookAt(0,0,0);
 let speed = 0.01;
 
 function animate() {
     requestAnimationFrame(animate);
-
     controls.update();
     renderer.render(scene, camera);
+    starmesh.rotateY(0.005)
     globe.rotateY(Math.sin(speed));
     globe.rotateX(Math.sin(speed));
 }
+
+var tl = gsap.timeline();
+  document.querySelector("#move-button").onclick = () => {
+      tl.to(camera.position, {z: 20, duration: 2});
+      
+    }
 
 animate();
 window.addEventListener("resize", onWindowResize, false);
